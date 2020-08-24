@@ -18,12 +18,10 @@ public class KVTCard: UIView {
         super.layoutSubviews()
     }
     
-    
-    
     private func setupView() {
-        backgroundColor = UIColor(named: "PunchTint05")
+        backgroundColor = UIColor.punchTint05
         layer.borderWidth = 1.0
-        layer.borderColor = UIColor(named: "Punch")!.cgColor
+        layer.borderColor = UIColor.punch?.cgColor
         layer.cornerRadius = 12.0
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOpacity = 0.5

@@ -1,6 +1,4 @@
 // swift-tools-version:5.3
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
@@ -14,10 +12,14 @@ let package = Package(
             targets: ["KVTUIKit"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/CodeNationDev/SimplyLogger.git", .branch("main") )
     ],
     targets: [
         .target(name: "KVTUIKit",
-                dependencies: []
+                dependencies: [.byName(name: "SimplyLogger")],
+                resources: [
+                    .process("Fonts/MyKidsHandwrittenBasic.otf"),
+                ]
         )
     ]
 )
