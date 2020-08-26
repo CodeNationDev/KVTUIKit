@@ -2,13 +2,13 @@
 import Foundation
 import UIKit
 
-public class KVTCard: UIView {
+public class KVTTableView: UITableView {
     
-    public init(frame: CGRect, theme: Theme?) {
-        super.init(frame: frame)
+    override public init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
         setupView()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
@@ -19,13 +19,16 @@ public class KVTCard: UIView {
     }
     
     private func setupView() {
-        backgroundColor = theme?.secondaryColor
+        backgroundColor = UIColor.punchTint05
         layer.borderWidth = 1.0
-        layer.borderColor = theme?.primaryColor?.cgColor
+        layer.borderColor = UIColor.punch.cgColor
         layer.cornerRadius = 12.0
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 7.0
+        separatorStyle = .none
     }
+    
+    
     
 }
