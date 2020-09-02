@@ -4,7 +4,7 @@ import UIKit
 
 public class KVTRoundedAvatar: UIView, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var imageAvatar = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    public var imageAvatar = UIImageView()
     var newPicButton = UIButton()
     
     override public init(frame: CGRect) {
@@ -21,25 +21,22 @@ public class KVTRoundedAvatar: UIView, UIImagePickerControllerDelegate & UINavig
         super.layoutSubviews()
     }
     
-    override public var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 200)
-    }
+
     
     func setupViews() {
         imageAvatar.image = imageAvatar.image?.withRenderingMode(.alwaysTemplate)
-        imageAvatar.tintColor = .lochmara
-        imageAvatar.image = UIImage(named: "Girl", in: Bundle.module, compatibleWith: nil)
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageAvatar.addGestureRecognizer(tapgesture)
         addSubview(imageAvatar)
         imageAvatar.isUserInteractionEnabled = true
         imageAvatar.contentMode = .scaleAspectFit
-        imageAvatar.layer.cornerRadius = 100.0
+        imageAvatar.layer.cornerRadius = frame.height/2
         imageAvatar.layer.masksToBounds = true
+        imageAvatar.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         backgroundColor = theme?.secondaryColor
         layer.borderWidth = 1.0
         layer.borderColor = theme?.primaryColor?.cgColor
-        layer.cornerRadius = 100.0
+        layer.cornerRadius = frame.height/2
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 7.0
