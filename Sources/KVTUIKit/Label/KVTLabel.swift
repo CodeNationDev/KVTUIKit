@@ -23,7 +23,7 @@ public class KVTLabel: UILabel {
     }
     
     private func setupView() {
-        textColor = .punch
+        textColor = theme?.primaryColor
         font = .kidSans(size: size)
     }
 }

@@ -24,4 +24,8 @@ extension UIColor {
     // MARK: Tints
     public static var punchTint05 = UIColor(named: "PunchTint05", in: Bundle.module, compatibleWith: nil)!
     public static var cornTint05 = UIColor(named: "CornTint05", in: Bundle.module, compatibleWith: nil)!
+    public static var blueTint05 = UIColor(named: "BlueTint05", in: Bundle.module, compatibleWith: nil)!
+    public static var purpleTint05 = UIColor(named: "PurpleTint05", in: Bundle.module, compatibleWith: nil)!
+    public static var limeGreenTint05 = UIColor(named: "LimeGreenTint05", in: Bundle.module, compatibleWith: nil)!
+    public static var limeGreenTint10 = UIColor(named: "LimeGreenTint10", in: Bundle.module, compatibleWith: nil)!
 }

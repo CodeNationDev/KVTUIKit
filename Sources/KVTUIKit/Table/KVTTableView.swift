@@ -19,9 +19,9 @@ public class KVTTableView: UITableView {
     }
     
     private func setupView() {
-        backgroundColor = UIColor.punchTint05
+        backgroundColor = theme?.secondaryColor
         layer.borderWidth = 1.0
-        layer.borderColor = UIColor.punch.cgColor
+        layer.borderColor = theme?.primaryColor?.cgColor
         layer.cornerRadius = 12.0
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOpacity = 0.5

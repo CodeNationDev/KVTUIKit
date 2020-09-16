@@ -24,12 +24,12 @@ public class KVTButton: UIButton {
     }
     
     func setupView() {
-        backgroundColor = UIColor(named: "PunchTint05", in: Bundle.module, compatibleWith: nil)
-        setTitleColor(UIColor(named: "Punch", in: Bundle.module, compatibleWith: nil), for: .normal)
+        backgroundColor = theme?.secondaryColor
+        setTitleColor(theme?.primaryColor, for: .normal)
         titleLabel?.font = .kidSans(size: 28.0)
         titleEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         layer.borderWidth = 1.0
-        layer.borderColor = UIColor.punch.cgColor
+        layer.borderColor = theme?.primaryColor?.cgColor
         layer.cornerRadius = 12.0
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOpacity = 0.5

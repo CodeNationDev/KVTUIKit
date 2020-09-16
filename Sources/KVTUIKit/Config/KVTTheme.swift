@@ -7,12 +7,15 @@ public struct Theme {
    public var secondaryColor: UIColor?
     
    public enum defaultThemes  {
-        case punch, corn
+        case punch, corn, loch, grapes, lime
         
         public var theme: Theme {
             switch self {
-            case .punch: return Theme(primaryColor: UIColor.punch, secondaryColor: UIColor.punchTint05)
+            case .punch: return Theme(primaryColor: .punch, secondaryColor: .punchTint05)
             case .corn: return Theme(primaryColor: .corn, secondaryColor: .cornTint05)
+            case .loch: return Theme(primaryColor: .lochmara, secondaryColor: .blueTint05)
+            case .grapes: return Theme(primaryColor: .studio, secondaryColor: .purpleTint05)
+            case .lime: return Theme(primaryColor: .greenGrass, secondaryColor: .limeGreenTint10)
             }
         }
     }
@@ -23,6 +26,10 @@ public struct Theme {
     }
 }
 
-public var theme:Theme? = Theme.defaultThemes.punch.theme
+public var theme:Theme? = Theme.defaultThemes.punch.theme {
+    didSet {
+        
+    }
+}
 
 
