@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 import SimplyLogger
 
-open class KVTViewController: UIViewController, UITextFieldDelegate {
+open class KVTBaseViewController: UIViewController, UITextFieldDelegate {
     
     var editingFieldX:CGFloat = 0.0
     
@@ -12,6 +12,8 @@ open class KVTViewController: UIViewController, UITextFieldDelegate {
         SimplyLogger.log(str: "\(self.restorationIdentifier ?? self.debugDescription) loaded", category: .viewcycle)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        view.backgroundColor = theme.primaryColor?.color()
 
         self.view.subviewsRecursive().forEach {
             if $0 is UITextField {

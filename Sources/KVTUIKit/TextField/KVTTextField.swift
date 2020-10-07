@@ -6,12 +6,12 @@ public class KVTTextField: UITextField {
     
     public override init(frame: CGRect){
         super.init(frame: frame)
-        setupViews()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupViews()
+        setupView()
     }
     
     override public func layoutSubviews() {
@@ -26,22 +26,12 @@ public class KVTTextField: UITextField {
         return bounds.inset(by: UIEdgeInsets(top: 2, left: 6, bottom: 2, right: 4))
     }
     
-    
-    
     override public var intrinsicContentSize: CGSize {
-        return CGSize(width: 120.0, height: 30.0)
+        return CGSize(width: 180.0, height: 55.0)
     }
     
-    func setupViews() {
-        backgroundColor = theme?.secondaryColor
-        layer.borderWidth = 1.0
-        layer.borderColor = theme?.primaryColor?.cgColor
-        layer.cornerRadius = 15.0
-//        layer.shadowColor = UIColor.darkGray.cgColor
-//        layer.shadowOpacity = 0.5
-//        layer.shadowRadius = 7.0
-        font = .kidSans(size: 24)
-        textColor = theme?.primaryColor
-        borderStyle = .none
+    func setupView() {
+        font = .systemFont(ofSize: 16)
+        textColor = theme.primaryColor?.color()
     }
 }

@@ -9,7 +9,7 @@ public class KVTCell: UITableViewCell {
     public var mainlabel: KVTLabel = {
         let label = KVTLabel()
         label.font = .kidSans(size: 17)
-        label.textColor = theme?.primaryColor
+        label.textColor = theme.primaryColor?.color()
         label.textAlignment = .left
         return label
     }()
@@ -17,7 +17,7 @@ public class KVTCell: UITableViewCell {
     public var sublabel: KVTLabel = {
         let label = KVTLabel()
         label.font = .kidSans(size: 14)
-        label.textColor = theme?.primaryColor
+        label.textColor = theme.primaryColor?.color()
         label.textAlignment = .left
         return label
     }()

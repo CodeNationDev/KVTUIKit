@@ -2,7 +2,17 @@
 import Foundation
 import UIKit
 
-public class KVTRoundedAvatar: UIView, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+@IBDesignable public class KVTRoundedAvatar: UIView, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    @IBInspectable public var border:CGFloat {
+        get {
+            layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+
     
     public var imageAvatar = UIImageView()
     var newPicButton = UIButton()
@@ -21,10 +31,14 @@ public class KVTRoundedAvatar: UIView, UIImagePickerControllerDelegate & UINavig
         super.layoutSubviews()
     }
     
-
+    
     
     func setupViews() {
-        imageAvatar.image = imageAvatar.image?.withRenderingMode(.alwaysTemplate)
+        if let image = imageAvatar.image?.withRenderingMode(.alwaysTemplate) {
+            imageAvatar.image = image
+        } else {
+            imageAvatar.image = .avatarPlaceholderImageGirl
+        }
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageAvatar.addGestureRecognizer(tapgesture)
         addSubview(imageAvatar)
@@ -33,18 +47,17 @@ public class KVTRoundedAvatar: UIView, UIImagePickerControllerDelegate & UINavig
         imageAvatar.layer.cornerRadius = frame.height/2
         imageAvatar.layer.masksToBounds = true
         imageAvatar.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-        backgroundColor = theme?.secondaryColor
-        layer.borderWidth = 1.0
-        layer.borderColor = theme?.primaryColor?.cgColor
+        imageAvatar.tintColor = theme.primaryColor?.color()
+        
+        
+        backgroundColor = theme.primaryColor?.color()
+        layer.borderColor = theme.primaryColor?.color()?.cgColor
         layer.cornerRadius = frame.height/2
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowRadius = 7.0
         layoutSubviews()
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
+    //MARK: Camera Imagepicker
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.allowsEditing = true
