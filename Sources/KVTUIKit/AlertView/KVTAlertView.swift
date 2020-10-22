@@ -6,6 +6,7 @@ public enum AlertMode {
     case oneButton, doubleButton
 }
 
+@available(iOS 13.0, *)
 public class KVTAlert: UIViewController {
     
     public var actionSelector: (KVTAlertAction?,KVTAlertAction?)?
@@ -112,7 +113,15 @@ public class KVTAlert: UIViewController {
     }
 
     func setupView() {
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+//        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+        view.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.layer.opacity = 0.8
+
+        view.addSubview(blurEffectView)
         view.addSubview(bodyView)
         bodyView.addSubview(headerView)
         bodyView.addSubview(buttonsStackview)

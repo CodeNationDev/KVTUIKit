@@ -26,9 +26,11 @@ public class KVTButton: UIButton {
     override public func layoutSubviews() {
         super.layoutSubviews()
         switch style {
-        case .normal: backgroundColor = theme.primaryColor?.color()
-            setTitleColor(theme.secondaryColor?.color(), for: .normal)
-        case .inverted: backgroundColor = theme.secondaryColor?.color()
+        case .normal:
+            backgroundColor = theme.primaryColor?.color()
+            setTitleColor(theme.inputBackgroundcolor?.color(), for: .normal)
+        case .inverted:
+            backgroundColor = theme.secondaryColor?.color()
             setTitleColor(theme.primaryColor?.color(), for: .normal)
             layer.borderWidth = 1.0
             layer.borderColor = theme.primaryColor?.color()?.cgColor

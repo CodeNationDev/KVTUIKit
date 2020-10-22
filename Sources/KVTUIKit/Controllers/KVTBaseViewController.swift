@@ -14,7 +14,7 @@ open class KVTBaseViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         view.backgroundColor = theme.primaryColor?.color()
-
+        
         self.view.subviewsRecursive().forEach {
             if $0 is UITextField {
                 let subview = $0 as! UITextField
@@ -30,7 +30,7 @@ open class KVTBaseViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0 {
@@ -40,8 +40,8 @@ open class KVTBaseViewController: UIViewController, UITextFieldDelegate {
     }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           self.view.endEditing(true)
-       }
+        self.view.endEditing(true)
+    }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         editingFieldX = textField.convert(textField.bounds, to: self.view).maxY

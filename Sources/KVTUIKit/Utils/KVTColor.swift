@@ -46,6 +46,8 @@ extension UIColor {
     public static var taithi = UIColor(named: "Taithi", in: Bundle.module, compatibleWith: nil)!
     public static var shadowColor = UIColor(named: "ShadowColor", in: Bundle.module, compatibleWith: nil)!
     public static var textMessageColor = UIColor(named: "TextMessageColor", in: Bundle.module, compatibleWith: nil)!
+    public static var magenta1 = UIColor(named: "Magenta1", in: Bundle.module, compatibleWith: nil)!
+    public static var magenta2 = UIColor(named: "Magenta2", in: Bundle.module, compatibleWith: nil)!
     
     // MARK: Tints
     public static var punchTint05 = UIColor(named: "PunchTint05", in: Bundle.module, compatibleWith: nil)!
@@ -63,6 +65,15 @@ extension UIColor {
         public static var secondaryColor = "white"
     }
     
+    //MARK: Megenta
+    public struct MagentaTheme {
+        public static var primaryColor = "Magenta2"
+        public static var secondaryColor = "punchSecondaryColor"
+        public static var inputBackgroundColor = "punchInputBackgroundColor"
+        public static var gradientStartColor = "Magenta2"
+        public static var gradientEndColor = "Magenta1"
+    }
+    
     
     //MARK: Punch
     public static var punchPrimaryColor = UIColor(named: "punchPrimaryColor", in: Bundle.module, compatibleWith: nil)!
@@ -74,6 +85,8 @@ extension UIColor {
         public static var primaryColor = "punchPrimaryColor"
         public static var secondaryColor = "punchSecondaryColor"
         public static var inputBackgroundColor = "punchInputBackgroundColor"
+        public static var gradientStartColor = "Punch"
+        public static var gradientEndColor = "Tabasco"
     }
     
     
@@ -82,6 +95,8 @@ extension UIColor {
         public static var primaryColor = "cornPrimaryColor"
         public static var secondaryColor = "cornSecondaryColor"
         public static var inputBackgroundColor = "cornInputBackgroundColor"
+        public static var gradientStartColor = "Punch"
+        public static var gradientEndColor = "Tabasco"
         
     }
     
@@ -90,6 +105,8 @@ extension UIColor {
         public static var primaryColor = "grapesPrimaryColor"
         public static var secondaryColor = "grapesSecondaryColor"
         public static var inputBackgroundColor = "grapesInputBackgroundColor"
+        public static var gradientStartColor = "Punch"
+        public static var gradientEndColor = "Tabasco"
     }
     
     //MARK: Loch
@@ -97,6 +114,8 @@ extension UIColor {
         public static var primaryColor = "lochPrimaryColor"
         public static var secondaryColor = "lochSecondaryColor"
         public static var inputBackgroundColor = "lochInputBackgroundColor"
+        public static var gradientStartColor = "Punch"
+        public static var gradientEndColor = "Tabasco"
     }
     public static var lochTextViewPlaceholder = UIColor(named: "LochTextViewPlaceholder", in: Bundle.module, compatibleWith: nil)!
     
@@ -110,6 +129,8 @@ extension UIColor {
         public static var primaryColor = "limePrimaryColor"
         public static var secondaryColor = "limeSecondaryColor"
         public static var inputBackgroundColor = "limeInputBackgroundColor"
+        public static var gradientStartColor = "Punch"
+        public static var gradientEndColor = "Tabasco"
     }
 }
 

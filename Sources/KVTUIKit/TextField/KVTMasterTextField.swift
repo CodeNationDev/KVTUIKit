@@ -48,10 +48,10 @@ public class KVTMasterTextField: UIView {
                 iconView.trailingAnchor.constraint(equalTo: trailingAnchor),
                 iconView.bottomAnchor.constraint(equalTo: bottomAnchor),
                 
-                icon.leadingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: 15),
-                icon.topAnchor.constraint(equalTo: iconView.topAnchor, constant: 15),
-                icon.trailingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: -7),
-                icon.bottomAnchor.constraint(equalTo: iconView.bottomAnchor, constant: -15),
+                icon.leadingAnchor.constraint(equalTo: iconView.leadingAnchor, constant: 5),
+                icon.topAnchor.constraint(equalTo: iconView.topAnchor, constant: 10),
+                icon.trailingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: -5),
+                icon.bottomAnchor.constraint(equalTo: iconView.bottomAnchor, constant: -10),
             ])
             
             backgroundColor = theme.inputBackgroundcolor?.color()
